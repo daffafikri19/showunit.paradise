@@ -3,13 +3,19 @@ import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+export default defineConfig(({ mode }) => {
+  return {
+    plugins: [react(), tailwindcss()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
-  base: "/showunit.paradise",
+    base: mode === "production" ? "/showunit.paradise/" : "/", // Gunakan "/" untuk dev
+    server: {
+      hmr: true, // Aktifkan Hot Module Replacement
+      watch: { usePolling: true }, // Pantau perubahan file
+      headers: { "Cache-Control": "no-store, no-cache, must-revalidate" }, // Nonaktifkan cache di dev
+    },
+  };
 });
