@@ -1,5 +1,9 @@
 import { CardUnit } from "./components/card-unit";
 import { HeroSection } from "./components/hero";
+import Arstone from "./assets/type-arstone.jpg";
+import Graystone from "./assets/type-graystone.jpg";
+import Omnia from "./assets/type-omnia.jpg";
+import Solavista from "./assets/type-solavista.jpg";
 
 function App() {
   return (
@@ -28,7 +32,7 @@ function App() {
         <div className="px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-10 content-center mx-auto">
           <div className="py-10 lg:py-0">
             <CardUnit
-              image="/type-arstone.jpg"
+              image={Arstone}
               title="Arstone"
               bedsize="2+1 Kamar Tidur"
               bathsize="2+1 Kamar Mandi"
@@ -38,7 +42,7 @@ function App() {
           </div>
           <div className="py-10 lg:py-0">
             <CardUnit
-              image="/type-graystone.jpg"
+              image={Graystone}
               title="Graystone"
               bedsize="2+1 Kamar Tidur"
               bathsize="2+1 Kamar Mandi"
@@ -48,7 +52,7 @@ function App() {
           </div>
           <div className="py-10 lg:py-0">
             <CardUnit
-              image="/type-omnia.jpg"
+              image={Omnia}
               title="Omnia"
               bedsize="2+1 Kamar Tidur"
               bathsize="2+1 Kamar Mandi"
@@ -58,7 +62,7 @@ function App() {
           </div>
           <div className="py-10 lg:py-0">
             <CardUnit
-              image="/type-solavista.jpg"
+              image={Solavista}
               title="Solavista"
               bedsize="2+1 Kamar Tidur"
               bathsize="2+1 Kamar Mandi"
